@@ -30,17 +30,16 @@ pip install uv
 **Clone the repository:**
 
 ```bash
-git clone https://github.com/<your-username>/hand-cricket-vs-llm.git
-cd hand-cricket-vs-llm
+git clone https://github.com/SwekeR-463/llm-hand-cricket.git
+cd llm-hand-cricket
 ```
 
 **Create and sync environment using `uv`:**
 
 ```bash
-uv venv
+uv init
+uv sync
 source .venv/bin/activate  # or .venv\Scripts\activate on Windows
-
-uv pip install requests rich
 ```
 
 **Set your OpenRouter API key:**
@@ -60,7 +59,7 @@ And add
 OPENROUTER_API_KEY="your_api_key_here"
 ```
 
-If not set, the LLM will play random moves.
+If not set, the random move mode will be used.
 
 **Run the match:**
 
@@ -188,9 +187,10 @@ Failed to reach the target!
 
 ### Todos
 
-- [x] Add **scorecard history** and stats tracking
+- [ ] Add **scorecard history** and stats tracking
 - [ ] Add leaderboard for different model's scores against me
 - [ ] Enable **LLM vs LLM matches** (benchmark-style)
+- [ ] Add support for models using HF
 - [ ] Web-based UI (using Streamlit or FastAPI)
 
 ---
