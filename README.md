@@ -83,6 +83,8 @@ uv run main.py
 
 ### Example Run
 
+This with the `nvidia/nemotron-nano-9b-v2:free`.
+
 ```bash
 ╭─────────────────────────────────╮
 │ Welcome to Hand Cricket vs LLM! │
@@ -188,6 +190,7 @@ Failed to reach the target!
 ### Todos
 
 - [ ] Add **scorecard history** and stats tracking
+- [ ] Add parsers for getting reasoning traces and the move what LLM chose
 - [ ] Add leaderboard for different model's scores against me
 - [ ] Enable **LLM vs LLM matches** (benchmark-style)
 - [ ] Add support for models using HF

@@ -12,7 +12,7 @@ load_dotenv()
 # config
 
 USE_LLM = True
-MODEL_NAME = "z-ai/glm-4.5-air:free"
+MODEL_NAME = "deepseek/deepseek-r1-0528-qwen3-8b:free"
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
 console = Console()
@@ -56,7 +56,7 @@ class HandCricketEnv:
 
 # llm moves
 
-def llm_reasoning(history, role="bowling"):
+def llm_reasoning(history, role: str):
     if not USE_LLM or not OPENROUTER_API_KEY:
         return random.randint(1, 6)
 
