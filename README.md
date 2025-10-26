@@ -12,7 +12,7 @@ Play a complete two-innings hand cricket match complete with toss, target chasin
 * **Two innings** - one for you, one for the LLM
 * **Real cricket logic** - whoever successfully chases the target wins
 * **CLI visuals** using [`rich`](https://github.com/Textualize/rich)
-* **LLM opponent logic** (uses OpenRouter API)
+* **LLM opponent** using OpenRouter Models
 * **Fallback random mode** when no API key is set
 * **Win detection** when target is reached
 
@@ -189,11 +189,11 @@ Failed to reach the target!
 
 ### Todos
 
-- [ ] Add **scorecard history** and stats tracking
+- [ ] Add scorecard history and stats tracking
 - [ ] Add parsers for getting reasoning traces and the move what LLM chose
 - [ ] Add leaderboard for different model's scores against me
-- [ ] Enable **LLM vs LLM matches** (benchmark-style)
+- [ ] Enable LLM vs LLM matches
 - [ ] Add support for models using HF
-- [ ] Web-based UI (using Streamlit or FastAPI)
+- [ ] Web-based UI
 
 ---
