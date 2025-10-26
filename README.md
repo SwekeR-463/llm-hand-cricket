@@ -83,7 +83,7 @@ uv run main.py
 
 ### Example Run
 
-This with the `nvidia/nemotron-nano-9b-v2:free`.
+This is with the `nvidia/nemotron-nano-9b-v2:free`.
 
 ```bash
 ╭─────────────────────────────────╮
