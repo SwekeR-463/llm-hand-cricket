@@ -92,74 +92,33 @@ This is with the `nvidia/nemotron-nano-9b-v2:free`.
 ╭───────────────────────────────────────────────────────────────────╮
 │  Time for the Toss!                                               │
 ╰───────────────────────────────────────────────────────────────────╯
-Call heads or tails: tails
-The coin landed on heads!
+Call heads or tails: heds
+The coin landed on tails!
  LLM won the toss!
-LLM chooses to bat first.
+LLM chooses to bowl first.
 ────────────────────── Let’s Begin the Match! ───────────────────────
- You are bowling!
-Your move (1–6): 6
-  This Turn  
-┏━━━━━┳━━━━━┓
-┃ You ┃ LLM ┃
-┡━━━━━╇━━━━━┩
-│  6  │  3  │
-└─────┴─────┘
-╭──────────────────╮
-│ Current Score: 3 │
-╰──────────────────╯
-Your move (1–6): 2
-  This Turn  
-┏━━━━━┳━━━━━┓
-┃ You ┃ LLM ┃
-┡━━━━━╇━━━━━┩
-│  2  │  5  │
-└─────┴─────┘
-╭──────────────────╮
-│ Current Score: 8 │
-╰──────────────────╯
-Your move (1–6): 1
-  This Turn  
-┏━━━━━┳━━━━━┓
-┃ You ┃ LLM ┃
-┡━━━━━╇━━━━━┩
-│  1  │  4  │
-└─────┴─────┘
-╭───────────────────╮
-│ Current Score: 12 │
-╰───────────────────╯
-Your move (1–6): 1
-  This Turn  
-┏━━━━━┳━━━━━┓
-┃ You ┃ LLM ┃
-┡━━━━━╇━━━━━┩
-│  1  │  1  │
-└─────┴─────┘
-╭───────────────────╮
-│ Current Score: 12 │
-╰───────────────────╯
-
- OUT!
-        Innings Summary        
-┏━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━┓
-┃ Turn ┃ Your Move ┃ LLM Move ┃
-┡━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━┩
-│  1   │     6     │    3     │
-├──────┼───────────┼──────────┤
-│  2   │     2     │    5     │
-├──────┼───────────┼──────────┤
-│  3   │     1     │    4     │
-├──────┼───────────┼──────────┤
-│  4   │     1     │    1     │
-└──────┴───────────┴──────────┘
-╭─────────────────╮
-│ Final Score: 12 │
-╰─────────────────╯
-╭───────────────────────────────────────────────────────────────────╮
-│  Target for You: 13 runs!                                         │
-╰───────────────────────────────────────────────────────────────────╯
- You are batting!
+You are batting!
 Your move (1–6): 4
+╭───────────────────────────────────────────────────────────────────╮
+│ > LLM Thinking...                                                 │
+│ Since this is the first turn with no historical data, I need to   │
+│ choose a number without prior information. As the bowler, my goal │
+│ is to strategically increase the probability of getting the       │
+│ batsman out (scoring pick the same number) to end the innings and │
+│ prevent any runs from being scored. At the same time, I should    │
+│ minimize the potential runs scored if the numbers differ.         │
+│                                                                   │
+│ Assuming the user might choose a number randomly or based on      │
+│ common tendencies (like avoiding extremes or choosing "lucky"     │
+│ numbers), I'll select a moderate number—specifically, 4. This is  │
+│ because numbers around the middle of the range (3-5) are often    │
+│ perceived as balanced and less risky. Choosing 4 gives me a 1/6   │
+│ chance of getting an out, and if not out, the user scores 4,      │
+│ which is moderate and not a high-scoring number. This approach    │
+│ helps me avoid extreme outcomes while keeping the game            │
+│ interesting.                                                      │
+╰───────────────────────────────────────────────────────────────────╯
+- LLM plays: 4
   This Turn  
 ┏━━━━━┳━━━━━┓
 ┃ You ┃ LLM ┃
@@ -180,7 +139,49 @@ Your move (1–6): 4
 ╭────────────────╮
 │ Final Score: 0 │
 ╰────────────────╯
-Failed to reach the target!
+╭───────────────────────────────────────────────────────────────────╮
+│  Target for LLM: 1 runs!                                          │
+╰───────────────────────────────────────────────────────────────────╯
+You are bowling!
+Your move (1–6): 3
+╭───────────────────────────────────────────────────────────────────╮
+│ > LLM Thinking...                                                 │
+│ As the AI batting in this one-on-one hand cricket match, I need   │
+│ to start strategically with no prior history to predict the       │
+│ user's choices. Since there's no data, I'll assume the user is    │
+│ choosing randomly or with common human tendencies, which often    │
+│ favor numbers between 3 and 5 for a balance of scoring potential  │
+│ and risk avoidance (e.g., avoiding 1 for low scores and 6 for     │
+│ higher dismissal risk).                                           │
+│                                                                   │
+│ For my first move, I aim for a number that maximizes expected     │
+│ runs while not being too extreme. Calculating the expected value  │
+│ with a random user choice (each number has a 1/6 probability),    │
+│ the expected runs for number X are (5/6) * X. For X=5, this gives │
+│ approximately 4.17 runs, which is high but not the extreme of X=6 │
+│ (5 expected runs). However, X=6 has a higher risk of dismissal,   │
+│ so I'll opt for 5 as a compromise between high scoring and        │
+│ moderate risk.                                                    │
+│                                                                   │
+│ This choice also allows me to potentially score runs quickly      │
+│ while setting up future strategic plays based on the user's       │
+│ response. I'll keep an eye on their next move to adjust my        │
+│ strategy—e.g., if they often choose high numbers, I might vary my │
+│ choices to avoid patterns.                                        │
+╰───────────────────────────────────────────────────────────────────╯
+- LLM plays: 5
+  This Turn  
+┏━━━━━┳━━━━━┓
+┃ You ┃ LLM ┃
+┡━━━━━╇━━━━━┩
+│  3  │  5  │
+└─────┴─────┘
+╭──────────────────╮
+│ Current Score: 5 │
+╰──────────────────╯
+╭───────────────────────────────────────────────────────────────────╮
+│  Target Reached!                                                  │
+╰───────────────────────────────────────────────────────────────────╯
 ───────────────────────────  MATCH RESULT ───────────────────────────
  LLM wins!
 ```
@@ -189,11 +190,13 @@ Failed to reach the target!
 
 ### Todos
 
+- [x] Make everything under `src/`
 - [ ] Add scorecard history and stats tracking
 - [ ] Add parsers for getting reasoning traces and the move what LLM chose
 - [ ] Add leaderboard for different model's scores against me
 - [ ] Enable LLM vs LLM matches
 - [ ] Add support for models using HF
+- [ ] Add support for Cerebras endpoints
 - [ ] Web-based UI
 
 ---
