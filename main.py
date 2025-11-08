@@ -1,15 +1,25 @@
-from src.toss import toss
-from src.match import play_innings
-from src.metrics_logger import MetricsLogger
 from rich.console import Console
 from rich.panel import Panel
+from src.match import play_innings
+from src.toss import toss
+from src.metrics_logger import MetricsLogger
+from src.llm_vs_llm import llm_vs_llm_match
 
 console = Console()
 
 def play_match():
-    console.print(Panel("[bold green]Welcome to Hand Cricket vs LLM![/]", expand=False))
-    user_bats_first = toss()
+    console.print(Panel("[bold green]Welcome to Hand Cricket Arena![/]", expand=False))
+    mode = input("Choose mode (1=You vs LLM, 2=LLM vs LLM): ").strip()
+
+    if mode == "2":
+        model_a = input("Enter Model-A (e.g., deepseek/deepseek-r1-0528-qwen3-8b:free): ").strip()
+        model_b = input("Enter Model-B (e.g., z-ai/glm-4.5-air:free): ").strip()
+        llm_vs_llm_match(model_a, model_b)
+        return
+
+    # Fallback to normal user vs LLM flow
     metrics = MetricsLogger()
+    user_bats_first = toss()
 
     if user_bats_first:
         user_score, _ = play_innings(True, metrics_logger=metrics)
@@ -21,7 +31,6 @@ def play_match():
         user_score, _ = play_innings(True, target=llm_score + 1, metrics_logger=metrics)
 
     console.rule("[bold white] MATCH RESULT[/]")
-
     if user_score > llm_score:
         console.print("[bold green] You win![/]")
     elif llm_score > user_score:
@@ -31,3 +40,4 @@ def play_match():
 
 if __name__ == "__main__":
     play_match()
+    
