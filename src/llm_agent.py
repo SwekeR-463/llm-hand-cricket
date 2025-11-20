@@ -96,7 +96,7 @@ class LLMPlayer:
     def decide_move(self, history):
         """Decide next move based on role and game history."""
         if not self.use_llm or not OPENROUTER_API_KEY:
-            return random.randint(1, 6)
+            return random.randint(1, 6), "Random move (fallback)"
 
         history_text = "\n".join(
             [f"Turn {i+1}: Bat={u}, Bowl={l}" for i, (u, l) in enumerate(history)]
@@ -132,17 +132,20 @@ class LLMPlayer:
             data = response.json()
             text = data["choices"][0]["message"]["content"].strip()
 
+            reasoning = ""
             if "Move:" in text:
                 reasoning, move_part = text.split("Move:", 1)
                 console.print(Panel(f"[italic blue]{self.name} thinking...[/]\n{reasoning.strip()}", expand=False))
                 text = move_part.strip()
+            else:
+                console.print(Panel(f"[italic blue]{self.name} (brief reasoning):[/]\n{text}", expand=False))
 
             move = int("".join([ch for ch in text if ch.isdigit()]) or random.randint(1, 6))
             move = move if 1 <= move <= 6 else random.randint(1, 6)
 
             console.print(f"[bold magenta]{self.name} plays:[/] {move}")
-            return move
+            return move, reasoning.strip()
 
         except Exception as e:
             console.print(Panel(f"[red]{self.name} error:[/] {e}", expand=False))
-            return random.randint(1, 6)
+            return random.randint(1, 6), "Error / fallback move"
