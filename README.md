@@ -195,7 +195,7 @@ Your move (1–6): 3
 - [ ] Add parsers for getting reasoning traces and the move what LLM chose
 - [ ] Add leaderboard for different model's scores against me
 - [x] Enable LLM vs LLM matches
-- [ ] Make the models benchmarked across 3 match series
+- [x] Make the models benchmarked across 3 match series
 - [ ] Add support for models using HF
 - [ ] Add support for Cerebras endpoints
 - [ ] Web-based UI
